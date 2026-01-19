@@ -10,7 +10,7 @@ class HealthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../config/health.php.php' => config_path('health.php'),
+            __DIR__.'/../config/health.php' => config_path('health.php'),
         ]);
 
         if ($this->app->runningInConsole()) {
