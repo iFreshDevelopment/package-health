@@ -3,8 +3,8 @@
 namespace IFresh\PackageHealth\Generators;
 
 use Carbon\Carbon;
-use stdClass;
 use IFresh\PackageHealth\DataObjects\PackageDetails;
+use stdClass;
 
 class PackageDetailGenerator
 {

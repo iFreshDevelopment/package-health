@@ -2,11 +2,11 @@
 
 namespace IFresh\PackageHealth\Repositories;
 
-use Illuminate\Support\Collection;
-use stdClass;
 use IFresh\PackageHealth\DataObjects\PackageDetails;
 use IFresh\PackageHealth\Generators\PackageDetailGenerator;
 use IFresh\PackageHealth\Support\Composer;
+use Illuminate\Support\Collection;
+use stdClass;
 
 class PackageRepository
 {

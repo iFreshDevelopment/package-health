@@ -2,8 +2,8 @@
 
 namespace IFresh\PackageHealth;
 
-use Illuminate\Support\ServiceProvider;
 use IFresh\PackageHealth\Commands\SendPackageStatusCommand;
+use Illuminate\Support\ServiceProvider;
 
 class HealthServiceProvider extends ServiceProvider
 {
@@ -20,7 +20,7 @@ class HealthServiceProvider extends ServiceProvider
         }
     }
 
-    public function register() : void
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__.'/../config/health.php', 'health'

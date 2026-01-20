@@ -2,11 +2,11 @@
 
 namespace IFresh\PackageHealth\Commands;
 
+use IFresh\PackageHealth\Generators\ReportGenerator;
 use Illuminate\Console\Command;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use IFresh\PackageHealth\Generators\ReportGenerator;
 
 class SendPackageStatusCommand extends Command
 {
@@ -14,6 +14,7 @@ class SendPackageStatusCommand extends Command
 
     public function handle()
     {
+
         $shouldPost = app()
             ->make(config('health.decider'))
             ->shouldPost();

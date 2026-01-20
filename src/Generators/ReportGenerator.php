@@ -21,6 +21,7 @@ class ReportGenerator
             $this->packages->patchUpdates(),
             filled($this->securityChecker->check(base_path('composer.lock'))),
             phpversion(),
+            app()->version(),
         );
     }
 }

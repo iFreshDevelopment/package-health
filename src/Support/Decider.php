@@ -6,6 +6,6 @@ class Decider
 {
     public function shouldPost(): bool
     {
-        return true;
+        return app()->isProduction();
     }
 }

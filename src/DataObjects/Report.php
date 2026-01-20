@@ -17,5 +17,6 @@ class Report
         public readonly Collection $patchUpdates,
         public readonly bool $hasVulnerabilities,
         public readonly string $currentPhpVersion,
+        public readonly string $currentLaravelVersion,
     ) {}
 }
