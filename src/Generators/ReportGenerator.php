@@ -2,9 +2,9 @@
 
 namespace IFresh\PackageHealth\Generators;
 
-use Enlightn\SecurityChecker\SecurityChecker;
 use IFresh\PackageHealth\DataObjects\Report;
 use IFresh\PackageHealth\Repositories\PackageRepository;
+use IFresh\PackageHealth\Support\SecurityChecker;
 
 class ReportGenerator
 {
@@ -15,11 +15,12 @@ class ReportGenerator
 
     public function generate(): Report
     {
+
         return new Report(
             $this->packages->majorUpdates(),
             $this->packages->minorUpdates(),
             $this->packages->patchUpdates(),
-            filled($this->securityChecker->check(base_path('composer.lock'))),
+            filled($this->securityChecker->getVulnerabilities(base_path('composer.lock'))),
             phpversion(),
             app()->version(),
         );

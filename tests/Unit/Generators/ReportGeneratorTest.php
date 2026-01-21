@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Generators;
 
-use Enlightn\SecurityChecker\SecurityChecker;
 use IFresh\PackageHealth\DataObjects\Report;
 use IFresh\PackageHealth\Generators\ReportGenerator;
 use IFresh\PackageHealth\Repositories\PackageRepository;
+use IFresh\PackageHealth\Support\SecurityChecker;
 use Tests\TestCase;
 
 class ReportGeneratorTest extends TestCase
@@ -20,7 +20,7 @@ class ReportGeneratorTest extends TestCase
         });
 
         $this->mock(SecurityChecker::class)
-            ->shouldReceive('check')
+            ->shouldReceive('getVulnerabilities')
             ->once()
             ->andReturn([]);
 
