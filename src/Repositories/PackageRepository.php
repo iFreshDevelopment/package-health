@@ -55,4 +55,13 @@ class PackageRepository
     {
         return $this->getWithArguments('--patch-only');
     }
+
+    public function hasVulnerabilities(): bool
+    {
+        $command = sprintf('audit --format=json');
+
+        $result = json_decode($this->composer->run($command));
+
+        return filled($result->advisories);
+    }
 }

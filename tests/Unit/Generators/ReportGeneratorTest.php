@@ -5,7 +5,6 @@ namespace Tests\Unit\Generators;
 use IFresh\PackageHealth\DataObjects\Report;
 use IFresh\PackageHealth\Generators\ReportGenerator;
 use IFresh\PackageHealth\Repositories\PackageRepository;
-use IFresh\PackageHealth\Support\SecurityChecker;
 use Tests\TestCase;
 
 class ReportGeneratorTest extends TestCase
@@ -17,12 +16,8 @@ class ReportGeneratorTest extends TestCase
             $mock->shouldReceive('majorUpdates')->once()->andReturn(collect());
             $mock->shouldReceive('minorUpdates')->once()->andReturn(collect());
             $mock->shouldReceive('patchUpdates')->once()->andReturn(collect());
+            $mock->shouldReceive('hasVulnerabilities')->once()->andReturn(false);
         });
-
-        $this->mock(SecurityChecker::class)
-            ->shouldReceive('getVulnerabilities')
-            ->once()
-            ->andReturn([]);
 
         $report = app(ReportGenerator::class)->generate();
 
