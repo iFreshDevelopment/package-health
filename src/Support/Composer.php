@@ -9,6 +9,6 @@ class Composer
         $phpExecutable = PHP_BINARY;
         $composerExecutable = trim(shell_exec('which composer'));
 
-        return shell_exec(sprintf('%s %s %s', $phpExecutable, $composerExecutable, $command));
+        return shell_exec(sprintf('"%s" "%s" %s', $phpExecutable, $composerExecutable, $command));
     }
 }
