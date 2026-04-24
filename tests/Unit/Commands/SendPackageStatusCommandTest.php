@@ -9,8 +9,9 @@ use IFresh\PackageHealth\Support\Decider;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
+use Tests\TestCase;
 
-class SendPackageStatusCommandTest extends \Tests\TestCase
+class SendPackageStatusCommandTest extends TestCase
 {
     /** @test */
     public function it_sends_the_package_status_request_test()

@@ -1,4 +1,4 @@
-# IFresh Package Health
+# iFresh Package Health
 
 A small Laravel package that periodically generates a health/status report for your application or packages and sends it to a remote endpoint.
 
